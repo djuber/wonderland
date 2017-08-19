@@ -3,8 +3,8 @@
             [wonderland.core :refer :all]))
 
 (deftest a-test
-  (testing "I pass."
-    (is (=  1 1))))
+  (testing "FIXME, I fail."
+    (is (= 1 1))))
 
 (deftest never-is-always-false
   (testing "never is always false"
