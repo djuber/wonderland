@@ -29,3 +29,7 @@
     (is (= [1 2 3] (->vector [1 2 3])))
     (is (= [1 2 3] (->vector (list 1 2 3))))
     (is (= [1 2 '(1 2)] (->vector (list 1 2 (list 1 2)))))))
+
+(deftest shop-for-jams-returns-a-set
+  (testing "shop for jams answers with a set"
+(is (map? (shop-for-jams "red" "blue")))))
