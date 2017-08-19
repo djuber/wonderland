@@ -47,3 +47,23 @@
   "x when any of preds are true on it"
   [preds x]
   (if (any? #(true? (%1 x)) preds) x))
+
+
+;; for problem three we needed to create factor (probably don't yet need prime)
+(defn factor [n]
+  (let [limit (inc (int (Math/sqrt n)))]
+    (cond
+      (= n 0) nil
+      (= n 1) nil
+      (even? n) (cons 2 (factor (/ n 2)))
+      :else (loop
+                [test 3]
+              (cond
+                (= 0 (mod n test))
+                (cons test (factor (/ n test)))
+                (> test limit) (list n)
+                :else (recur (+ test 2)))))))
+
+(defn prime [n]
+  (let [factors (factor n)]
+    (and factors (empty? (rest (factor n))))))
