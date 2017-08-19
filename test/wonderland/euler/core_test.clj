@@ -2,7 +2,6 @@
   (:require [wonderland.euler.core :refer :all]
             [clojure.test :refer :all]))
 
-
 (deftest divides-test
   (testing "true when divides"
     (is (true? (divides? 2 10)))
@@ -23,3 +22,14 @@
     (is (not (any-divide? 10 nil))))
   (testing "false for no divisors"
     (is (not (any-divide? 17 [2 3 4 5 6 7 8 9 10])))))
+
+(deftest factor-test
+  (testing "empty for zero and one"
+    (is (empty? (factor 0)))
+    (is (empty? (factor 1))))
+  (testing "single value for primes"
+    (is (= '(2) (factor 2)))
+    (is (= '(11) (factor 11))))
+  (testing "gives multiples as appropriate"
+    (is (= (repeat 4 2) (factor (* 2 2 2 2))))))
+    
