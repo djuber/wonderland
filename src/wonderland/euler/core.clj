@@ -67,3 +67,41 @@
 (defn prime [n]
   (let [factors (factor n)]
     (and factors (empty? (rest (factor n))))))
+
+
+;; from problem four - get digits of a number
+(defn digit-char-to-digit [c]
+  (case c
+    "0" 0
+    "1" 1
+    "2" 2
+    "3" 3
+    "4" 4
+    "5" 5
+    "6" 6
+    "7" 7
+    "8" 8
+    "9" 9))
+
+(defn digits
+  "give the digits of n as a list"
+  [n]
+  (map digit-char-to-digit
+    (clojure.string/split
+      (print-str n)
+      #"")))
+
+(defn palindromic
+  "true of palindromic base 10 numbers"
+  [n]
+  (let [numbers (digits n)]
+    (= (reverse numbers) numbers)))
+
+(defn cross-product
+  "join the collections in colls as tuples"
+  [colls]
+  (if (empty? colls)
+    '(())
+    (for [x (first colls)
+           more (cross-product (rest colls))]
+      (cons x more))))
