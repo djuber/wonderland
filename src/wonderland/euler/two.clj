@@ -24,7 +24,6 @@
              (+ cur last)
              cur))))
 
-
 (defn fibonacci-upto [limit]
   (fibonacci-until (fn [n] (< limit n))))
 
