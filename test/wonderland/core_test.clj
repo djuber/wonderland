@@ -32,4 +32,4 @@
 
 (deftest shop-for-jams-returns-a-set
   (testing "shop for jams answers with a set"
-(is (map? (shop-for-jams "red" "blue")))))
+    (is (map? (shop-for-jams "red" "blue")))))
