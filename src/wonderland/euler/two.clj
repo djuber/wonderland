@@ -1,10 +1,5 @@
 (ns wonderland.euler.two)
 
-(defn fib-iter [remaining cur last]
-  (if (= 0 remaining)
-    cur
-    (fib-iter (dec remaining) (+ cur last) cur)))
-
 (defn fibonacci-terms
   "take limit terms from the fibonacci sequence"
   [limit]
@@ -24,7 +19,7 @@
          cur 1
          last 0]
     (if (break cur)
-      (clojure.core/butlast collection)
+      (butlast collection)
       (recur (conj collection (+ cur last))
              (+ cur last)
              cur))))
