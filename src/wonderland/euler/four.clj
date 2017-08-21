@@ -5,7 +5,6 @@
 
 Find the largest palindrome made from the product of two 3-digit numbers."
 
-
 (defn products-of-three-digits []
   (map (fn [p] (apply * p))
     (core/cross-product
