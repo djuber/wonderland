@@ -66,7 +66,7 @@
 
 (defn prime [n]
   (let [factors (factor n)]
-    (and factors (empty? (rest (factor n))))))
+    (and factors (empty? (rest factors)))))
 
 
 ;; from problem four - get digits of a number
