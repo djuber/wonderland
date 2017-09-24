@@ -16,13 +16,16 @@ Find the difference between the sum of the squares of the first one hundred
 natural numbers and the square of the sum.
 ")
 
+(defn square [n]
+  (* n n))
+
 (defn sum-of-square [range]
   (reduce +
-          (map (fn [x] (* x x )) range)))
+          (map square range)))
 
 (defn square-of-sum [range]
   (let [sum (reduce + range)]
-    (* sum sum)))
+    (square sum)))
 
 (defn euler-six []
   (let [one-to-one-hundred (wonderland.euler.core/upto-natural 101)]
